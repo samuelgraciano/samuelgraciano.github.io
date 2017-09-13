@@ -1,0 +1,139 @@
+
+body {
+  background: #f5f5f5;
+  color: #56585a;
+  font: 400 14px/28px "Roboto", sans-serif;
+  -webkit-text-size-adjust: none;
+}
+
+/*para mantener alineadas las imagenes del catalogo*/
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+a {
+  
+  /*aqui es para que controlar si esta subrayado o no*/
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+  -moz-transition: 0.3s; 
+
+ }
+ 
+ 
+/*
+esta parte es para que quede el texto catalogo en grande*/
+
+
+.brand_name {
+  display: inline-block;
+  overflow: hidden;
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 62px;
+  color: #5ab7de;
+  vertical-align: bottom;
+}
+
+/*Con este codigo damos formato al slogan que dice udem al lado de la palabra catalogo*/
+.brand_slogan {
+  display: inline-block;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  font-size: 24px;
+  vertical-align: bottom;
+}
+
+/*esta parte  de aqui es para controlar los cositos azules ==================     Banner    ======================*/
+.banner_wr {
+  position: relative;
+  min-height: 308px;   /* entre mayor sea el valor mas espacio  va a haber entre los cositos azules y el footer*/
+}
+
+/*para dar formato a los elementos azules abajo del slider */
+.banner li {
+  position: relative;
+  margin-top: 30px;
+  width: 25%;
+  height: 358px;
+  padding: 25px 29px 20px;
+  float: left;
+  color: #fff;
+  background: #62bfe6;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  vertical-align: bottom;
+  -moz-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+/*este sirve para que suban los cositos azules */
+.banner li:hover {
+  margin-top: 0px;  /*ejemplo valor 100 tira hacia abajo y -100 tiraria hacia arriba*/
+  height: 388px;
+  padding-bottom: 50px; /*para que se alarge entre mayor sea el numero mas se alargara cuando se pase le mouse */
+}
+
+
+/*========================   Menu   ==========================*/
+
+/*hace que el menu se eva horizontalmente*/
+.sf-menu:after {
+  clear: both;
+}
+.sf-menu > li {
+  position: relative;
+  float: left;
+}
+.sf-menu a {
+  display: block;
+}
+/*hasta aqui */
+
+/*le da el ancho hacia abajo al menu */
+.sf-menu > li > a {
+  padding: 22px 30px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-right: 1px solid #56585a;
+}
+
+/*este codigo es para que cuando se pase por el menu  se subraye*/
+.sf-menu > li.sfHover > a, .sf-menu > li > a:hover {
+  color: #fff;
+  background: #5ab7de;
+  border-right: 1px solid #4bb0db;
+}
+
+/*este codigo es para subrayar en que pagina se encuentra el usuario*/
+.sf-menu > li.active > a {
+  color: #fff;
+  background: #5ab7de;
+  border-right: 1px solid #4bb0db;
+}
+
+
+/*le da el fondo al menu */
+.fondomenu {
+  margin-top: 22px;
+  background: #434547;
+}
+
+/*hasta aqui*/
+
+
+/*Codigo del footer*/
+footer {
+  color: #888a8c;
+  background: #434547;
+}
+
