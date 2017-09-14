@@ -1,0 +1,76 @@
+
+html, body, div, span, 
+h1, h2, h3, h4, h5, h6, p, blockquote,
+ul, li,footer, header, menu, nav	
+
+/*define el margen entre letras catalogo y el menu*/
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: top;
+}
+
+
+ol, ul {
+  list-style: none;
+}
+
+/*esto lo que hace es darle un formato centrado a las margenes de la pagina*/
+
+.container, .container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container, .container-fluid {
+  width: 1170px;
+}
+
+/*este codigo es para mantener formato de imagenes en catalogo*/
+.container .row {
+  margin-left: -30px;
+}
+
+.container [class*="grid_"] {
+  float: left;
+  min-height: 1px;
+  margin-left: 30px;
+}
+/*hasta aqui*/
+
+
+/*este es el codigo utilizado para dar tamaño a imagenes de catalogo*/
+.container .grid_4 {
+  width: 370px;
+}
+
+
+/*tiene relacion con el tamaño de las imagenes del catalogo*/
+@media (min-width: 768px) and (max-width: 979px) { ´
+  
+  .container, .container-fluid {
+    width: 748px;
+  } 
+}
+
+
+ /*para mantener formato de imagenes catalogo*/{{
+    width: 420px;
+    padding: 0;
+  }
+}
+
+.container:before, .container-fluid:before, .row:before, .container:after, .container-fluid:after, .row:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.container:after, .container-fluid:after, .row:after {
+  clear: both;
+}
