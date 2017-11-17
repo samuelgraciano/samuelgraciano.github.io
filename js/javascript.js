@@ -363,6 +363,34 @@
 		else{
 			document.getElementById("numeroTarjeta").className = "textBien";
 		}		
+//CVC de la tarjeta:	
+		var vCvcTarjeta = document.getElementById("cvcTarjeta").value;
+		if( vCvcTarjeta.length!=3 || vCvcTarjeta=="" || isNaN(vCvcTarjeta) ) {
+			todoBien=false;
+			document.getElementById("cvcTarjeta").className = "textMal";
+		}	
+		else{
+			document.getElementById("cvcTarjeta").className = "textBien";
+		}	
 
+		
+		//Fecha de tarjeta MES:
+		var vMesTarjeta = document.getElementById("mesTarjeta").selectedIndex;
+		if( vMesTarjeta == null || vMesTarjeta == 0 ) {
+			todoBien=false;
+			document.getElementById("mesTarjeta").className = "textMal";
+		}
+		else{
+			document.getElementById("mesTarjeta").className = "textBien";
+		}	
+		//Fecha de tarjeta AÑO:
+		var vAnioTarjeta = document.getElementById("anioTarjeta").selectedIndex;
+		if( vAnioTarjeta == null || vAnioTarjeta == 0 ) {
+			todoBien=false;
+			document.getElementById("anioTarjeta").className = "textMal";
+		}
+		else{
+			document.getElementById("anioTarjeta").className = "textBien";
+		}				
 	
 	
