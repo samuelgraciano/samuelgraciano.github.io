@@ -392,5 +392,20 @@
 		else{
 			document.getElementById("anioTarjeta").className = "textBien";
 		}				
+		
+		//Si no ha habido ni un solo error, se ejecuta la siguiente funcion que se encarga de enviar los datos:
+		if (todoBien){
+			validaDatosPagoYEnviaCarro();
+		}
+	}
+
+	
+
+
+//FUNCION DE VALIDAR DATOS PAGO y ENVIAR DATOS
+	function validaDatosPagoYEnviaCarro(elEvento) {
+		alert("Gracias por su compra, Su pago ha sido deducido de su tarjeta, en 24 horas recivira su pedido\nAhora puede volver al catalogo");
+		window.location.reload()
+	}
 	
 	
