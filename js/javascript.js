@@ -65,4 +65,47 @@
 	/*-------------------COMIENZAN LAS FUNCIONES-------------------*/
 	
 	
+	//FUNCION DE VALIDACION DE UNIDADES:
+	function validaLasUnidades(elEvento) {
+		
+		var todoBien = true;
+		uniUser = document.getElementsByName("uniUser");
+		
+		
+		for (i in productos){
+		
+			if ( uniUser[i].value == "" || uniUser[i].value > stock[i] || uniUser[i].value < 0 ){
+				
+				todoBien = false;
+				uniUser[i].className = "uniMal";
+								
+				//Modifica el css para quitar los formularios:
+				document.getElementById("todo").className = "todoNo";
+				document.getElementById("menu").className = "menuNo";
+				document.getElementById("divZonaCompra").className = "divZonaCompraNo";
+				document.getElementById("divTotal").className = "divsNo";
+/**/			document.getElementById("divDatos").className = "divsNo";
+/**/			document.getElementById("divPago").className = "divsNo";				
+				
+				//Deshabilita el boton de datos personales:
+				document.getElementById("botonDatos").disabled = true;
+/**/			document.getElementById("botonDatos").disabled = true;
+/**/			document.getElementById("botonDatos").disabled = true;				
+				
+				//Con solo un error se para la validacion de unidades:
+				return;
+			}
+			else{
+				todoBien = true;
+				uniUser[i].className = "uniBien";
+			}
+		}
+
+		//Si no ha habido ni un solo error, se ejecuta la siguiente funcion que se encarga de cargar el carro de la compra:
+		if (todoBien){
+			calculaElTotal();
+		}
+	}
+	
+	
 	
