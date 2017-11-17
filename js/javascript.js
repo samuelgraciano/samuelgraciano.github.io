@@ -193,4 +193,13 @@
 		document.getElementById("tablaTotal").innerHTML = tablaTotal + '<tr><td> </td> <td></td><td class="preUni"><b>Transporte: </b></td><td class="preTotal"><b>' +totalTransporte+ '</b></td></tr>' + '<tr><td> </td> <td></td><td class="preUni"><b>IVA ('+(IVA*100)+'%): </b></td><td class="preTotal"><b>' +totalIVA+ '</b></td></tr>' + '<tr><td> </td> <td></td><td class="preUni"><b>Total: </b></td><td class="preTotal" id="totalAPagar"><b>' +totalAPagar+ ' €</b></td></tr>';
 	}	
 	
+	//FUNCION DE PEDIR DATOS
+	function pideDatos(elEvento) {
+		document.getElementById("divDatos").className = "divsSi";
+/**/	document.getElementById("divTotal").className = "divsNo";
+/**/	document.getElementById("divPago").className = "divsNo";		
+		document.getElementById("botonPago").disabled = false;
+	}	
+
+	
 	
