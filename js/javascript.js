@@ -311,5 +311,14 @@
 		}
 	}
 
+	//FUNCION DE VALIDAR DATOS y PEDIR DATOS PAGO
+	function pideDatosPago(elEvento) {
+/**/	document.getElementById("divTotal").className = "divsNo";
+/**/	document.getElementById("divDatos").className = "divsNo";
+		document.getElementById("divPago").className = "divsSi";
+		document.getElementById("botonConfirmar").disabled = false;
+	}
+	
+	
 	
 	
