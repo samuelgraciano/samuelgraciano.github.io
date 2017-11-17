@@ -107,5 +107,51 @@
 		}
 	}
 	
+	//FUNCION QUE MUSTRA EL CARRO DE LA COMPRA:
+	function calculaElTotal(elEvento) {
+
+	
+		//Añade el encabezado de la tabla
+		document.getElementById("tablaTotal").innerHTML = '<tr><td class="pro"><b>Producto</b></td><td class="uni"><b>Unidades</b></td><td class="preUni"><b>Precio Unidad</b></td><td class="preTotal"><b>Precio Total</b></td></tr>';
+	
+	
+		//Inicializacion de las variables para esta funcion:
+		var carroTotal = 0;
+		var numProductos = 0;
+		
+		
+		//Muestra el carrito de la compra
+		for (i in productos){
+
+			var tablaTotal = document.getElementById("tablaTotal").innerHTML;
+			var preTotal = 0;
+		
+			
+			//Cuenta el numero de productos para saber cuanto costara el transporte
+			if (uniUser[i].value != 0){
+				numProductos++;
+			}
+			
+			
+			if (uniUser[i].value != 0){
+			
+				//Modifica el css para hacer hueco a los formularios
+				document.getElementById("todo").className = "todoSi";
+				document.getElementById("menu").className = "menuSi";
+				document.getElementById("divZonaCompra").className = "divZonaCompraSi";
+				document.getElementById("divTotal").className = "divsSi";
+/**/			document.getElementById("divDatos").className = "divsNo";
+/**/			document.getElementById("divPago").className = "divsNo";				
+				
+				//Habilita el boton de datos personales
+				document.getElementById("botonDatos").disabled = false;
+				
+				//Calcula el totalUnidades y rellena el carro de la compra
+				preTotal = precios[i] * uniUser[i].value;
+				carroTotal = carroTotal + preTotal;
+				document.getElementById("tablaTotal").innerHTML = tablaTotal + '<tr class="proCarrito"><td>' +productos[i]+ '</td><td>' +uniUser[i].value+ '</td><td>' +precios[i]+ '</td><td id="preTotal' +i+'" name="preTotal">' +preTotal+ '</td></tr>';
+			}
+		}
+		
 	
 	
