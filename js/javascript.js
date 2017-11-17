@@ -320,5 +320,19 @@
 	}
 	
 	
+	//FUNCION DE VALIDACION DE DATOS PAGO:
+	function validaDatosPago(elEvento) {
+
+		var todoBien = true;
+		
+		//Titular de la cuenta:
+		var vTitular = document.getElementById("titular").value;
+		if( vTitular == null || vTitular.length == 0 || /^\s+$/.test(vTitular) || !isNaN(vTitular)) {
+			todoBien=false;
+			document.getElementById("titular").className = "textMal";
+		}
+		else{
+			document.getElementById("titular").className = "textBien";
+		}			
 	
 	
