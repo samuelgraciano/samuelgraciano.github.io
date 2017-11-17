@@ -17,7 +17,52 @@
 	var uniUser;
 	
 	
+//JAVASCRIPT A EJECUTARSE UNA VEZ CARGADA LA PAGINA:	
+	window.onload = function(){
 
+	
+		//Se cargan los productos dentro del HTML de forna dinamica haciendo uso de los datos de la base de datos, como si de un PHP se tratase:
+		var DIVS = document.getElementsByName("DIVS");
+		for (i in productos){
+			DIVS[i].innerHTML = '<a id="imgG'+i+'" href="' +imgGrandes[i]+ '"><img id="imgP'+i+'" class="imagen" src="' +imgPeque[i]+ '"></a><div class="etiquetas"><b><span id="pro'+i+'">' +productos[i]+ '</span>: <span id="pre'+i+'">' +precios[i]+ '$</span></b></div><div class="stock">Disponibles <span id="uni'+i+'">' +stock[i]+ '</span> <br/>¿Cuantas Unidades quiere?: <input class="uniBien" type="number" id="uniUser'+i+'" name="uniUser" value="0" size="4" /></div>';
+		}
+	
+	
+		//Rellena el campo dia y año, de la fecha de nacimiento y tarjeta de credito:
+		//Fecha de nacimiento
+		var fecha = new Date();
+		var anio = fecha.getFullYear();
+				
+		for (var i=1;i<=31;i++){
+			document.getElementById("fechaNacimientoDia").innerHTML = document.getElementById("fechaNacimientoDia").innerHTML + '<option value="' +i+ '">' +i+ '</option>';
+		}
+				
+		for (var i=anio;i>=(anio-110);i--){
+			document.getElementById("fechaNacimientoAnio").innerHTML = document.getElementById("fechaNacimientoAnio").innerHTML + '<option value="' +i+ '">' +i+ '</option>';
+		}
+
+		//Tarjeta de credito:
+		for (var i=1;i<=12;i++){
+			document.getElementById("mesTarjeta").innerHTML = document.getElementById("mesTarjeta").innerHTML + '<option value="' +i+ '">' +i+ '</option>';
+		}
+
+		for (var i=anio;i<=(anio+21);i++){
+			document.getElementById("anioTarjeta").innerHTML = document.getElementById("anioTarjeta").innerHTML + '<option value="' +i+ '">' +i+ '</option>';
+		}
+
+		
+	
+		//Botones que llevaran a cabo la ejecucion de determinadas secuencias de codigo JavaScript:
+		document.getElementById("botonTotal").onclick = validaLasUnidades;
+		document.getElementById("botonDatos").onclick = pideDatos;
+		document.getElementById("botonPago").onclick = validaDatosPersonales;
+		document.getElementById("botonConfirmar").onclick = validaDatosPago;
+	}
+
+	
+	
+	
+	/*-------------------COMIENZAN LAS FUNCIONES-------------------*/
 	
 	
 	
