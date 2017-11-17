@@ -334,5 +334,35 @@
 		else{
 			document.getElementById("titular").className = "textBien";
 		}			
+		
+		
+		//Tipo de tarjeta:
+		var vTarjetas = document.getElementsByName("tarjetas");
+		var seleccionado = false;
+		for(var i=0; i<vTarjetas.length; i++) {
+			if(vTarjetas[i].checked) {
+				seleccionado = true;
+				//break;
+			}
+		}
+		if(!seleccionado) {
+			todoBien=false;
+			document.getElementById("alertTipoDeTarjeta").className = "alertTipoDeTarjeta";
+		}
+		else{
+			document.getElementById("alertTipoDeTarjeta").className = "";
+		}		
+	
+	
+		//Numero de tarjeta:	
+		var vNumeroTarjeta = document.getElementById("numeroTarjeta").value;
+		if( vNumeroTarjeta.length!=16 || vNumeroTarjeta=="" || isNaN(vNumeroTarjeta) ) {
+			todoBien=false;
+			document.getElementById("numeroTarjeta").className = "textMal";
+		}	
+		else{
+			document.getElementById("numeroTarjeta").className = "textBien";
+		}		
+
 	
 	
