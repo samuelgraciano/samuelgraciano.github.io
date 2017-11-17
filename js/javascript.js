@@ -152,6 +152,45 @@
 				document.getElementById("tablaTotal").innerHTML = tablaTotal + '<tr class="proCarrito"><td>' +productos[i]+ '</td><td>' +uniUser[i].value+ '</td><td>' +precios[i]+ '</td><td id="preTotal' +i+'" name="preTotal">' +preTotal+ '</td></tr>';
 			}
 		}
+		//Se calcula el transporte a pagar segun la cantidad de productos comprados:
+		var precioTransporteAPagar;
+		if (numProductos <= 2){
+			precioTransporteAPagar = precioTransporte[0];
+		}
+		else if (numProductos <= 3){
+			precioTransporteAPagar = precioTransporte[1];
+		}
+		else if (numProductos <= 4){
+			precioTransporteAPagar = precioTransporte[2];
+		}
+		else if (numProductos >= 5){
+			precioTransporteAPagar = precioTransporte[3];
+		}
+
+		//Se sacan las cuentas del transporte (si lo hubiese), del iva y el total:
+		var totalTransporte = precioTransporteAPagar;
+		if(totalTransporte == "gratis"){
+			var totalIVA = (carroTotal * IVA);
+			var totalAPagar = carroTotal + totalIVA;
+		}
+		else{
+			var totalIVA = ((carroTotal + totalTransporte) * IVA);
+			var totalAPagar = carroTotal + totalTransporte + totalIVA;
+		}
+
 		
+		//Limitar a 2 los decimales a mostrar del IVA:
+		totalIVA=totalIVA*100;
+		totalIVA=Math.floor(totalIVA);
+		totalIVA=totalIVA/100;
+		//Limitar a 2 los decimales a mostrar del TOTAL A PAGAR:
+		totalAPagar=totalAPagar*100;
+		totalAPagar=Math.floor(totalAPagar);
+		totalAPagar=totalAPagar/100;		
+		
+		//Se añade a la tabla el TOTAL que suma el carrito:
+		tablaTotal = document.getElementById("tablaTotal").innerHTML;
+		document.getElementById("tablaTotal").innerHTML = tablaTotal + '<tr><td> </td> <td></td><td class="preUni"><b>Transporte: </b></td><td class="preTotal"><b>' +totalTransporte+ '</b></td></tr>' + '<tr><td> </td> <td></td><td class="preUni"><b>IVA ('+(IVA*100)+'%): </b></td><td class="preTotal"><b>' +totalIVA+ '</b></td></tr>' + '<tr><td> </td> <td></td><td class="preUni"><b>Total: </b></td><td class="preTotal" id="totalAPagar"><b>' +totalAPagar+ ' €</b></td></tr>';
+	}	
 	
 	
